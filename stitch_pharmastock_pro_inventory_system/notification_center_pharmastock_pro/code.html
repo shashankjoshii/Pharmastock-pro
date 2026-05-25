@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PharmaStock Pro | Notifications Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-dot {
+            box-shadow: 0 0 8px currentColor;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161d1b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3c4a46;
+            border-radius: 2px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#45474d",
+                        "on-tertiary-fixed": "#1a1b21",
+                        "tertiary-fixed-dim": "#c6c6cd",
+                        "surface-container-lowest": "#09100e",
+                        "on-secondary-container": "#b3b4c0",
+                        "on-background": "#dde4e1",
+                        "on-secondary-fixed": "#181b24",
+                        "secondary": "#c4c6d1",
+                        "inverse-surface": "#dde4e1",
+                        "on-tertiary-container": "#3f4046",
+                        "on-primary": "#00382f",
+                        "on-primary-fixed-variant": "#005045",
+                        "tertiary": "#c7c7ce",
+                        "background": "#0e1513",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c4c6d1",
+                        "on-tertiary": "#2e3036",
+                        "surface-container-low": "#161d1b",
+                        "secondary-fixed": "#e0e2ed",
+                        "outline": "#85948f",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2f3634",
+                        "primary-container": "#00c2a8",
+                        "primary-fixed-dim": "#41ddc2",
+                        "surface-container-highest": "#2f3634",
+                        "on-primary-fixed": "#00201b",
+                        "surface-dim": "#0e1513",
+                        "inverse-on-surface": "#2b3230",
+                        "on-secondary-fixed-variant": "#444650",
+                        "primary": "#42dec3",
+                        "tertiary-container": "#abacb3",
+                        "inverse-primary": "#006b5c",
+                        "on-error": "#690005",
+                        "primary-fixed": "#65fade",
+                        "on-primary-container": "#00493e",
+                        "surface": "#0e1513",
+                        "secondary-container": "#444650",
+                        "error-container": "#93000a",
+                        "on-secondary": "#2d3039",
+                        "surface-container-high": "#242b29",
+                        "surface-bright": "#333b38",
+                        "surface-tint": "#41ddc2",
+                        "on-surface": "#dde4e1",
+                        "tertiary-fixed": "#e2e2e9",
+                        "surface-container": "#1a211f",
+                        "outline-variant": "#3c4a46",
+                        "on-surface-variant": "#bbcac4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "4px",
+                        "lg": "6px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "container-max": "1440px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "kpi-numeric": ["Space Grotesk"],
+                        "mono-data": ["IBM Plex Sans"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-md": ["IBM Plex Sans"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-sm": ["IBM Plex Sans"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "kpi-numeric": ["36px", {"lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "mono-data": ["14px", {"lineHeight": "20px", "letterSpacing": "0px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden flex h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-unit overflow-y-auto bg-surface-container border-r border-outline-variant w-64 shrink-0 z-50">
+<div class="px-6 py-8 flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-primary font-bold">PharmaStock Pro</span>
+</div>
+<div class="px-4 py-2 mb-6">
+<div class="flex items-center gap-3 p-3 bg-surface-variant rounded-lg">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface">Warehouse A-12</p>
+<p class="text-body-sm text-on-surface-variant">Inventory Manager</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Product Master</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span>Stock Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps bg-primary-container text-on-primary-container border-r-4 border-primary transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span>Expiry Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-variant transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-2 mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 font-label-caps text-label-caps text-error hover:bg-error-container/10 transition-transform active:scale-95 duration-150 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 z-40 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-10 py-1.5 focus:border-primary focus:ring-1 focus:ring-primary text-body-sm outline-none" placeholder="Search notifications..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-4">
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 rounded relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full glow-dot text-primary"></span>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area: Notifications Center -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Pane: Notification List -->
+<section class="w-full md:w-[400px] border-r border-outline-variant bg-surface flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h1 class="font-headline-md text-headline-md text-on-surface">Alerts</h1>
+<button class="font-label-caps text-label-caps text-primary hover:underline" onclick="markAllRead()">MARK ALL AS READ</button>
+</div>
+<div class="flex-1 overflow-y-auto" id="notification-list">
+<!-- Stock Alert (Red) -->
+<div class="p-4 border-b border-outline-variant bg-surface-container-high cursor-pointer transition-colors hover:bg-surface-variant group relative" onclick="selectNotification(this, 'n1')">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded bg-error-container/20 flex items-center justify-center text-error border border-error/30 shrink-0">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div class="min-w-0">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-caps text-label-caps text-error">CRITICAL STOCK ALERT</span>
+<span class="text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold truncate">Amoxicillin 500mg (Batch AX-90)</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Inventory level dropped below safety threshold (5 units remaining).</p>
+</div>
+</div>
+</div>
+<!-- Expiry Alert (Amber) -->
+<div class="p-4 border-b border-outline-variant bg-surface cursor-pointer transition-colors hover:bg-surface-variant group" onclick="selectNotification(this, 'n2')">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded bg-tertiary-container/20 flex items-center justify-center text-tertiary-fixed-dim border border-tertiary/30 shrink-0" style="color: #FFB300;">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+</div>
+<div class="min-w-0">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim" style="color: #FFB300;">EXPIRY WARNING</span>
+<span class="text-[10px] text-on-surface-variant">45m ago</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold truncate">Paracetamol Infusion 100ml</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Batch #PF220 expires in 15 days. Action required.</p>
+</div>
+</div>
+</div>
+<!-- Confirmation (Green) -->
+<div class="p-4 border-b border-outline-variant bg-surface cursor-pointer transition-colors hover:bg-surface-variant group" onclick="selectNotification(this, 'n3')">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded bg-primary-container/10 flex items-center justify-center text-primary border border-primary/20 shrink-0">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<div class="min-w-0">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-caps text-label-caps text-primary">ORDER CONFIRMED</span>
+<span class="text-[10px] text-on-surface-variant">2h ago</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold truncate">Vendor: Global Pharma Ltd</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Purchase order PO-9982 has been accepted and processed.</p>
+</div>
+</div>
+</div>
+<!-- Stock Alert (Red) -->
+<div class="p-4 border-b border-outline-variant bg-surface cursor-pointer transition-colors hover:bg-surface-variant group" onclick="selectNotification(this, 'n4')">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded bg-error-container/20 flex items-center justify-center text-error border border-error/30 shrink-0">
+<span class="material-symbols-outlined" data-icon="trending_down">trending_down</span>
+</div>
+<div class="min-w-0">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-caps text-label-caps text-error">OUT OF STOCK</span>
+<span class="text-[10px] text-on-surface-variant">5h ago</span>
+</div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold truncate">Surgical Masks (Box of 50)</h3>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">Item is now out of stock in Sector B. Re-order recommended.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: Detail View -->
+<section class="hidden md:flex flex-1 bg-surface-container-lowest flex-col" id="detail-view">
+<!-- Header -->
+<div class="p-8 border-b border-outline-variant flex justify-between items-start">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-caps text-label-caps px-2 py-1 bg-error-container text-on-error-container rounded">STOCK ALERT</span>
+<span class="text-body-sm text-on-surface-variant font-mono-data">REF: #ALT-109283</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2" id="detail-title">Amoxicillin 500mg Capsules</h2>
+<div class="flex items-center gap-4 text-on-surface-variant font-mono-data text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> Oct 24, 2023 | 10:42 AM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span> Bin A-12, Section 4</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+</button>
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 p-8 overflow-y-auto space-y-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded shadow-inner">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-2">CURRENT STOCK</p>
+<p class="font-kpi-numeric text-kpi-numeric text-error">05 <span class="text-body-md">Units</span></p>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded shadow-inner">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-2">SAFETY THRESHOLD</p>
+<p class="font-kpi-numeric text-kpi-numeric text-on-surface">50 <span class="text-body-md">Units</span></p>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded shadow-inner">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-2">PENDING ORDERS</p>
+<p class="font-kpi-numeric text-kpi-numeric text-primary">00</p>
+</div>
+</div>
+<div class="bg-surface-container-high/50 p-6 rounded border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Detailed Incident Report</h3>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                            Automatic system scan detected a significant variance in the inventory levels for Amoxicillin 500mg (Batch AX-90). The current count is 5 units, which is 90% below the established safety threshold. This item is high-velocity and requires immediate replenishment to avoid order fulfillment delays. 
+                            <br/><br/>
+                            Last physical audit was performed on Oct 20, 2023. No discrepancies were reported at that time.
+                        </p>
+</div>
+<div class="bg-surface-container rounded border border-outline-variant overflow-hidden">
+<div class="px-6 py-4 bg-surface-container-highest border-b border-outline-variant">
+<span class="font-label-caps text-label-caps text-on-surface">ITEM SPECIFICATIONS</span>
+</div>
+<table class="w-full text-left font-mono-data text-body-sm">
+<tbody><tr class="border-b border-outline-variant">
+<td class="px-6 py-3 text-on-surface-variant bg-surface-container-low w-1/3">Batch Number</td>
+<td class="px-6 py-3 text-on-surface">AX-90-2023</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="px-6 py-3 text-on-surface-variant bg-surface-container-low">Manufacturer</td>
+<td class="px-6 py-3 text-on-surface">Apex Pharmaceuticals</td>
+</tr>
+<tr>
+<td class="px-6 py-3 text-on-surface-variant bg-surface-container-low">Storage Conditions</td>
+<td class="px-6 py-3 text-on-surface">Store below 25°C, Dry Place</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-8 border-t border-outline-variant bg-surface-container flex gap-4 justify-end">
+<button class="px-6 py-3 border border-outline-variant rounded text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-colors">DISMISS ALERT</button>
+<button class="px-6 py-3 bg-primary text-on-primary rounded font-label-caps text-label-caps hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="shopping_cart">shopping_cart</span>
+                        GENERATE PURCHASE ORDER
+                    </button>
+</div>
+</section>
+</main>
+</div>
+<!-- Responsive FAB (Mobile only) -->
+<div class="fixed bottom-6 right-6 md:hidden">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<script>
+        function selectNotification(element, id) {
+            // Remove active state from all items
+            const items = document.querySelectorAll('#notification-list > div');
+            items.forEach(item => {
+                item.classList.remove('bg-surface-container-high', 'border-l-primary');
+                item.classList.add('bg-surface');
+                const bar = item.querySelector('.absolute');
+                if (bar) bar.remove();
+            });
+
+            // Add active state to clicked item
+            element.classList.remove('bg-surface');
+            element.classList.add('bg-surface-container-high');
+            
+            const bar = document.createElement('div');
+            bar.className = 'absolute left-0 top-0 bottom-0 w-1 bg-primary';
+            element.appendChild(bar);
+
+            // Update Detail Pane content (Mock update)
+            const title = element.querySelector('h3').textContent;
+            const detailTitle = document.getElementById('detail-title');
+            detailTitle.textContent = title;
+        }
+
+        function markAllRead() {
+            const indicators = document.querySelectorAll('.absolute.left-0.top-0.bottom-0.w-1.bg-primary');
+            indicators.forEach(ind => ind.classList.remove('bg-primary'));
+            alert('All notifications marked as read.');
+        }
+
+        // Initialize micro-interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => el.classList.add('scale-95'));
+            el.addEventListener('mouseup', () => el.classList.remove('scale-95'));
+            el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>
