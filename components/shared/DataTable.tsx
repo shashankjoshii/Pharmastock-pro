@@ -61,7 +61,7 @@ export default function DataTable<T>({
                     onClick={() => onRowClick && onRowClick(row)}
                     className={cn(
                       "transition-colors duration-100 font-mono-data text-body-sm",
-                      // Alternating #13161E / #0F1117 (subtle zebra)
+                      // Alternating surface / surface-low (subtle zebra)
                       rowIdx % 2 === 0 ? "bg-surface-container" : "bg-surface-container-low/60",
                       onRowClick ? "cursor-pointer hover:bg-surface-container-high/70" : "hover:bg-surface-container-high/40"
                     )}

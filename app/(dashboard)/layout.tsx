@@ -53,7 +53,7 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#0D0F14] text-[#F0F2F6]">
+    <div className="flex h-screen overflow-hidden bg-background text-on-background">
       {/* Sidebar navigation */}
       <Sidebar
         collapsed={sidebarCollapsed}

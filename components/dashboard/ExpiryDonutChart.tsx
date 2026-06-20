@@ -4,9 +4,9 @@ import * as React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Safe (> 6 months)', value: 70, color: '#00C2A8' }, // Accent
-  { name: 'Warning (3-6 months)', value: 15, color: '#F5A623' }, // Warning
-  { name: 'Critical (< 30 days)', value: 15, color: '#E84040' }  // Danger
+  { name: 'Safe (> 6 months)', value: 70, color: '#0D9488' }, // Accent
+  { name: 'Warning (3-6 months)', value: 15, color: '#D97706' }, // Warning
+  { name: 'Critical (< 30 days)', value: 15, color: '#DC2626' }  // Danger
 ];
 
 export default function ExpiryDonutChart() {
@@ -29,7 +29,7 @@ export default function ExpiryDonutChart() {
                 dataKey="value"
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} stroke="#13161E" strokeWidth={2} />
+                  <Cell key={`cell-${index}`} fill={entry.color} stroke="#FFFFFF" strokeWidth={2} />
                 ))}
               </Pie>
             </PieChart>

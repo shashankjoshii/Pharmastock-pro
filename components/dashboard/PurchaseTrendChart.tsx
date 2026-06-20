@@ -73,17 +73,17 @@ export default function PurchaseTrendChart() {
       <div className="h-64 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={trendData} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
-            <CartesianGrid stroke="#232833" strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid stroke="#E2E8F0" strokeDasharray="3 3" vertical={false} />
             <XAxis
               dataKey="date"
-              stroke="#6B7280"
+              stroke="#64748B"
               fontSize={10}
               tickLine={false}
               axisLine={false}
               dy={10}
             />
             <YAxis
-              stroke="#6B7280"
+              stroke="#64748B"
               fontSize={10}
               tickLine={false}
               axisLine={false}
@@ -96,13 +96,14 @@ export default function PurchaseTrendChart() {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#13161E',
-                borderColor: '#343B4D',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
                 borderRadius: '6px',
+                boxShadow: '0 4px 12px rgba(15, 30, 46, 0.08)',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
-              labelStyle={{ color: '#F0F2F6', fontWeight: 'bold', fontSize: '12px' }}
-              itemStyle={{ color: '#00C2A8', fontSize: '12px' }}
+              labelStyle={{ color: '#0F1E2E', fontWeight: 'bold', fontSize: '12px' }}
+              itemStyle={{ color: '#0D9488', fontSize: '12px' }}
               formatter={(value: any) => {
                 if (metric === 'revenue') {
                   return [formatCurrency(value), 'Revenue'];
@@ -113,10 +114,10 @@ export default function PurchaseTrendChart() {
             <Line
               type="monotone"
               dataKey={metric}
-              stroke="#00C2A8"
+              stroke="#0D9488"
               strokeWidth={2}
               dot={false}
-              activeDot={{ r: 4, stroke: '#00C2A8', strokeWidth: 2, fill: '#0D0F14' }}
+              activeDot={{ r: 4, stroke: '#0D9488', strokeWidth: 2, fill: '#FFFFFF' }}
             />
           </LineChart>
         </ResponsiveContainer>

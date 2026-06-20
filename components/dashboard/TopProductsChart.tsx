@@ -33,7 +33,7 @@ export default function TopProductsChart() {
           >
             <XAxis
               type="number"
-              stroke="#6B7280"
+              stroke="#64748B"
               fontSize={10}
               tickLine={false}
               axisLine={false}
@@ -42,7 +42,7 @@ export default function TopProductsChart() {
             <YAxis
               dataKey="name"
               type="category"
-              stroke="#F0F2F6"
+              stroke="#0F1E2E"
               fontSize={10}
               tickLine={false}
               axisLine={false}
@@ -53,24 +53,26 @@ export default function TopProductsChart() {
               }}
             />
             <Tooltip
+              cursor={{ fill: 'rgba(13, 148, 136, 0.06)' }}
               contentStyle={{
-                backgroundColor: '#13161E',
-                borderColor: '#343B4D',
+                backgroundColor: '#FFFFFF',
+                borderColor: '#E2E8F0',
                 borderRadius: '6px',
+                boxShadow: '0 4px 12px rgba(15, 30, 46, 0.08)',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
-              labelStyle={{ color: '#F0F2F6', fontWeight: 'bold', fontSize: '12px' }}
-              itemStyle={{ color: '#00C2A8', fontSize: '12px' }}
+              labelStyle={{ color: '#0F1E2E', fontWeight: 'bold', fontSize: '12px' }}
+              itemStyle={{ color: '#0D9488', fontSize: '12px' }}
               formatter={(value: any) => [`${value} units`, 'Purchased']}
             />
             <Bar
               dataKey="units"
-              fill="#00C2A8"
+              fill="#0D9488"
               radius={[0, 4, 4, 0]}
               barSize={12}
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill="#00C2A8" className="transition-all duration-300 hover:opacity-80" />
+                <Cell key={`cell-${index}`} fill="#0D9488" className="transition-all duration-300 hover:opacity-80" />
               ))}
             </Bar>
           </BarChart>

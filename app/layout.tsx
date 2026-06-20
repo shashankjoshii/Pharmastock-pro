@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         {/* Preconnect to Google Fonts and load Material Symbols */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

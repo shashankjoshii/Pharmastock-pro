@@ -21,14 +21,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center font-body-md text-on-surface antialiased p-margin-mobile relative bg-[#0D0F14] grid-bg">
+    <div className="min-h-screen flex items-center justify-center font-body-md text-on-surface antialiased p-margin-mobile relative bg-background grid-bg">
       {/* Login Container */}
       <main className="w-full max-w-[440px] z-10">
         {/* Brand Identity Header */}
         <div className="flex flex-col items-center mb-10 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(0,194,168,0.3)]">
-              <span className="material-symbols-outlined text-[#001D19] text-[28px] font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>
+            <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(13,148,136,0.3)]">
+              <span className="material-symbols-outlined text-white text-[28px] font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>
                 pill
               </span>
             </div>

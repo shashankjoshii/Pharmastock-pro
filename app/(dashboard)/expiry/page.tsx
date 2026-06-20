@@ -129,7 +129,7 @@ export default function ExpiryTrackerPage() {
             disabled={row.quarantined}
             className={`flex items-center justify-center gap-1.5 px-3 py-1 font-label-caps text-label-caps text-[9px] rounded-clinical font-bold transition-all active:scale-95 border ${
               isRisk
-                ? 'bg-danger text-[#FFF2F2] border-danger/50 hover:bg-danger/90'
+                ? 'bg-danger text-white border-danger/50 hover:bg-danger/90'
                 : 'bg-surface-container-high border-outline hover:border-accent text-on-surface-variant hover:text-accent'
             }`}
           >
@@ -184,7 +184,7 @@ export default function ExpiryTrackerPage() {
         <div className="bg-surface-container p-4 border border-outline/50 rounded-clinical flex items-center justify-between">
           <div>
             <span className="font-label-caps text-[9px] text-text-muted uppercase block">QUARANTINED LOCKS</span>
-            <span className="text-xl font-bold font-kpi-numeric text-[#E84040] mt-1 block">{stats.quarantinedCount}</span>
+            <span className="text-xl font-bold font-kpi-numeric text-danger mt-1 block">{stats.quarantinedCount}</span>
           </div>
           <ShieldAlert className="h-8 w-8 text-danger/20" />
         </div>
