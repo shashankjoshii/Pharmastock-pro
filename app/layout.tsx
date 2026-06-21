@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Syne } from "next/font/google";
+import { Plus_Jakarta_Sans, Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const ibmPlexSans = IBM_Plex_Sans({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",
+  display: "swap",
 });
 
-const syne = Syne({
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-heading",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${ibmPlexSans.variable} ${syne.variable} font-sans bg-background text-text-primary antialiased`}
+        className={`${jakarta.variable} ${sora.variable} ${jetbrainsMono.variable} font-sans bg-background text-text-primary antialiased`}
       >
         {children}
       </body>

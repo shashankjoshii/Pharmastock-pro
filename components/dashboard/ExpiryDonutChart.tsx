@@ -11,7 +11,7 @@ const data = [
 
 export default function ExpiryDonutChart() {
   return (
-    <div className="bg-surface-container p-6 md:p-8 clinical-border rounded-clinical">
+    <div className="bg-surface-container p-6 md:p-8 clinical-border shadow-clinical rounded-clinical transition-shadow duration-300 hover:shadow-clinical-md">
       <h3 className="font-headline-md text-headline-md text-on-surface mb-8">Expiry Risk Distribution</h3>
       
       <div className="flex flex-col sm:flex-row items-center justify-around gap-6 h-60">

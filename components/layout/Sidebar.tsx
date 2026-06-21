@@ -37,7 +37,7 @@ export default function Sidebar({
           </div>
         )}
         {collapsed && (
-          <div className="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-lg">
+          <div className="w-8 h-8 rounded bg-accent-gradient text-on-primary-container flex items-center justify-center font-bold text-lg shadow-accent-glow">
             P
           </div>
         )}
@@ -53,15 +53,18 @@ export default function Sidebar({
               href={route.path}
               onClick={handleLinkClick}
               className={cn(
-                "flex items-center gap-3 px-4 py-3 transition-all duration-150 rounded active:scale-[0.98]",
+                "group flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-smooth rounded active:scale-[0.98]",
                 isActive
-                  ? "bg-primary/10 text-primary border-l-[3px] border-primary font-medium"
-                  : "text-on-surface-variant hover:bg-surface-variant/40 hover:text-on-surface",
+                  ? "bg-primary/10 text-primary border-l-[3px] border-primary font-semibold shadow-clinical"
+                  : "text-on-surface-variant hover:bg-surface-variant/40 hover:text-on-surface hover:translate-x-0.5",
                 collapsed ? "justify-center px-2" : ""
               )}
               title={collapsed ? route.label : undefined}
             >
-              <span className="material-symbols-outlined text-xl flex-shrink-0">{route.icon}</span>
+              <span className={cn(
+                "material-symbols-outlined text-xl flex-shrink-0 transition-transform duration-200",
+                isActive ? "scale-110" : "group-hover:scale-110"
+              )}>{route.icon}</span>
               {!collapsed && <span className="font-label-caps text-label-caps text-[11px] tracking-wider uppercase">{route.label}</span>}
             </Link>
           );

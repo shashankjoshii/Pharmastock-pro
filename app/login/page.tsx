@@ -23,11 +23,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center font-body-md text-on-surface antialiased p-margin-mobile relative bg-background grid-bg">
       {/* Login Container */}
-      <main className="w-full max-w-[440px] z-10">
+      <main className="w-full max-w-[440px] z-10 animate-fade-in-up">
         {/* Brand Identity Header */}
         <div className="flex flex-col items-center mb-10 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(13,148,136,0.3)]">
+            <div className="w-12 h-12 bg-accent-gradient flex items-center justify-center rounded-lg shadow-accent-glow hover:scale-105 transition-transform duration-300">
               <span className="material-symbols-outlined text-white text-[28px] font-bold" style={{ fontVariationSettings: "'FILL' 1" }}>
                 pill
               </span>
@@ -43,7 +43,7 @@ export default function LoginPage() {
         </div>
 
         {/* Login Card */}
-        <section className="bg-surface/85 backdrop-blur-[24px] border border-outline p-8 rounded-clinical shadow-2xl">
+        <section className="bg-surface/90 backdrop-blur-[24px] border border-outline p-8 rounded-clinical shadow-clinical-lg">
           <header className="mb-8">
             <h2 className="font-headline-lg text-headline-lg text-on-surface mb-2">System Access</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant/80">
@@ -115,7 +115,7 @@ export default function LoginPage() {
             {/* Actions */}
             <div className="pt-2">
               <button
-                className="w-full h-12 bg-primary text-on-primary-container font-label-caps text-label-caps rounded-clinical hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-[11px] font-semibold"
+                className="w-full h-12 bg-accent-gradient text-on-primary-container font-label-caps text-label-caps rounded-clinical shadow-clinical hover:shadow-accent-glow hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:opacity-70 transition-all duration-200 ease-smooth flex items-center justify-center gap-2 uppercase tracking-widest text-[11px] font-semibold"
                 type="submit"
                 disabled={loading}
               >

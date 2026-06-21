@@ -36,11 +36,13 @@ export default function KPICard({
   };
 
   return (
-    <div className={cn("bg-surface-container p-6 clinical-border relative overflow-hidden group rounded-clinical", className)}>
+    <div className={cn("bg-surface-container p-6 clinical-border shadow-clinical card-hover relative overflow-hidden group rounded-clinical", className)}>
       {/* Visual background glow decor */}
       {type === 'progress' && (
-        <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 -mr-12 -mt-12 rounded-full blur-2xl pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 -mr-12 -mt-12 rounded-full blur-2xl pointer-events-none transition-opacity duration-300 group-hover:opacity-80"></div>
       )}
+      {/* Accent edge that lights up on hover */}
+      <div className="absolute left-0 top-0 h-full w-[3px] bg-accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       {/* Header section with optional badge */}
       <div className="flex justify-between items-start mb-2">
@@ -77,7 +79,7 @@ export default function KPICard({
         {type === 'progress' && (
           <div className="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
             <div
-              className="h-full bg-primary rounded-full transition-all duration-500"
+              className="h-full bg-accent-gradient rounded-full transition-all duration-700 ease-smooth"
               style={{ width: `${progressValue}%` }}
             ></div>
           </div>

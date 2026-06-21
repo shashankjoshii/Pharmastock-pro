@@ -21,7 +21,7 @@ const data = [
 
 export default function TopProductsChart() {
   return (
-    <div className="bg-surface-container p-6 md:p-8 clinical-border rounded-clinical">
+    <div className="bg-surface-container p-6 md:p-8 clinical-border shadow-clinical rounded-clinical transition-shadow duration-300 hover:shadow-clinical-md">
       <h3 className="font-headline-md text-headline-md text-on-surface mb-8">Top 5 Purchased Products</h3>
 
       <div className="h-60 w-full">

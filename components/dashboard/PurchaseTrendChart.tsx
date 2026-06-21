@@ -36,7 +36,7 @@ export default function PurchaseTrendChart() {
   const [metric, setMetric] = React.useState<'volume' | 'revenue'>('volume');
 
   return (
-    <div className="bg-surface-container p-6 md:p-8 clinical-border rounded-clinical">
+    <div className="bg-surface-container p-6 md:p-8 clinical-border shadow-clinical rounded-clinical transition-shadow duration-300 hover:shadow-clinical-md">
       <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
         <div className="flex items-center gap-3">
           <h3 className="font-headline-md text-headline-md text-on-surface">Purchase Trends</h3>

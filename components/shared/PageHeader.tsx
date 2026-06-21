@@ -17,7 +17,7 @@ export default function PageHeader({
   className
 }: PageHeaderProps) {
   return (
-    <div className={cn("flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8", className)}>
+    <div className={cn("flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8 animate-fade-in-up", className)}>
       <div>
         <h2 className="font-display-lg text-display-lg text-on-surface tracking-tight">{title}</h2>
         {description && (

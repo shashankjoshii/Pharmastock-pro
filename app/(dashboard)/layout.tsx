@@ -189,7 +189,7 @@ export default function DashboardLayout({
               <button
                 type="submit"
                 disabled={!selectedProduct || !selectedVendor}
-                className="px-4 py-2 bg-primary text-on-primary-container hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:pointer-events-none font-label-caps text-label-caps rounded-clinical text-[10px] font-semibold transition-all"
+                className="px-4 py-2 bg-accent-gradient text-on-primary-container shadow-clinical hover:shadow-accent-glow hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:opacity-50 disabled:pointer-events-none disabled:shadow-none font-label-caps text-label-caps rounded-clinical text-[10px] font-semibold transition-all duration-200 ease-smooth"
               >
                 CONFIRM ACQUISITION
               </button>

@@ -60,10 +60,12 @@ export default function DataTable<T>({
                     key={rowIdx}
                     onClick={() => onRowClick && onRowClick(row)}
                     className={cn(
-                      "transition-colors duration-100 font-mono-data text-body-sm",
+                      "transition-colors duration-200 font-mono-data text-body-sm",
                       // Alternating surface / surface-low (subtle zebra)
                       rowIdx % 2 === 0 ? "bg-surface-container" : "bg-surface-container-low/60",
-                      onRowClick ? "cursor-pointer hover:bg-surface-container-high/70" : "hover:bg-surface-container-high/40"
+                      onRowClick
+                        ? "cursor-pointer hover:bg-accent-soft hover:shadow-[inset_3px_0_0_0_#0D9488]"
+                        : "hover:bg-surface-container-high/40"
                     )}
                   >
                     {columns.map((column, colIdx) => {

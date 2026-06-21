@@ -75,7 +75,7 @@ export default function DashboardPage() {
       />
 
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger">
         <KPICard
           title="Total Stock Value"
           value="₹24.8M"
@@ -120,7 +120,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Movements Log */}
-      <div className="bg-surface-container clinical-border rounded-clinical overflow-hidden">
+      <div className="bg-surface-container clinical-border shadow-clinical rounded-clinical overflow-hidden animate-fade-in-up">
         <div className="px-6 py-5 border-b border-outline-variant/60 flex justify-between items-center bg-surface-container-low/30">
           <h3 className="font-headline-md text-headline-md text-on-surface">Recent Inventory Movements</h3>
           <Link
@@ -138,7 +138,7 @@ export default function DashboardPage() {
       {/* Floating Action Button */}
       <button
         onClick={() => console.log('Floating action clicked')}
-        className="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary-container rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform z-40 group border border-primary/20 glow-accent"
+        className="fixed bottom-8 right-8 w-14 h-14 bg-accent-gradient text-on-primary-container rounded-full flex items-center justify-center shadow-accent-glow hover:scale-110 hover:shadow-clinical-lg active:scale-95 transition-all duration-300 ease-smooth z-40 group border border-primary/20"
         title="Quick Replenish"
       >
         <span className="material-symbols-outlined text-[28px] font-semibold">add</span>

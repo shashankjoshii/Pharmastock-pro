@@ -80,12 +80,13 @@ const config: Config = {
         "container-max": "1440px",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "sans-serif"],
-        heading: ["var(--font-heading)", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
         "label-caps": ["var(--font-sans)", "sans-serif"],
         "body-lg": ["var(--font-sans)", "sans-serif"],
         "kpi-numeric": ["var(--font-heading)", "sans-serif"],
-        "mono-data": ["var(--font-sans)", "sans-serif"],
+        "mono-data": ["var(--font-mono)", "ui-monospace", "monospace"],
         "display-lg": ["var(--font-heading)", "sans-serif"],
         "body-md": ["var(--font-sans)", "sans-serif"],
         "headline-lg": ["var(--font-heading)", "sans-serif"],
@@ -102,6 +103,48 @@ const config: Config = {
         "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
         "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
         "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+      },
+      boxShadow: {
+        clinical: "0 1px 2px rgba(15, 30, 46, 0.04), 0 1px 3px rgba(15, 30, 46, 0.06)",
+        "clinical-md": "0 4px 12px rgba(15, 30, 46, 0.06), 0 2px 4px rgba(15, 30, 46, 0.04)",
+        "clinical-lg": "0 10px 30px rgba(15, 30, 46, 0.08), 0 4px 8px rgba(15, 30, 46, 0.04)",
+        "accent-glow": "0 6px 20px rgba(13, 148, 136, 0.25)",
+        "accent-ring": "0 0 0 3px rgba(13, 148, 136, 0.12)",
+      },
+      backgroundImage: {
+        "accent-gradient": "linear-gradient(135deg, #0D9488 0%, #0F766E 100%)",
+        "accent-soft": "linear-gradient(135deg, rgba(13,148,136,0.10) 0%, rgba(14,165,233,0.08) 100%)",
+        "surface-sheen": "linear-gradient(180deg, #FFFFFF 0%, #FBFDFE 100%)",
+      },
+      keyframes: {
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.96)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
+      },
+      animation: {
+        "fade-in": "fade-in 0.4s ease-out both",
+        "fade-in-up": "fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "scale-in": "scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "pulse-soft": "pulse-soft 2.5s ease-in-out infinite",
+      },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },
